@@ -21,12 +21,10 @@
   "schema_version": "1.0",
   "snapshot": {
     "category": "07-molecular-materials-and-condensed-matter",
-    "copied_bytes": 30914831,
-    "copied_files": 245,
+    "copied_bytes": 31047181,
+    "copied_files": 255,
     "date": "2026-08-25",
     "excluded_directories": [
-      "examples/data",
-      "jax_md/_nn/uma/checkpoints",
       "notebooks/data"
     ],
     "excluded_files": [],
