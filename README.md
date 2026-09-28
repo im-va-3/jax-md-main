@@ -178,3 +178,21 @@ If you use functionalities related to `RigidBody`, please cite the following pap
   publisher={National Academy of Sciences}
 }
 ```
+
+
+## Step-by-step user guide
+
+1. **Install JAX MD.** Create an isolated Python environment and run <code>python -m pip install jax-md</code>. Follow the [JAX installation guide](https://docs.jax.dev/en/latest/installation.html) separately if you need a GPU or TPU backend.
+2. **Run a supplied simulation.** From the repository root, try <code>python examples/nve_simulation.py</code> or <code>python examples/nvt_simulation.py</code>. Use the [NVE with neighbor lists](examples/nve_neighbor_list.py) example when exploring large particle counts.
+3. **Define the system.** Select a periodic or custom space, initialize particle positions, and choose a pair or many-body energy/potential. Check units, box size, cutoff, and neighbor-list capacity.
+4. **Choose the dynamics.** Select an NVE, NVT, or NPT integrator (or a minimizer), provide the time step and thermodynamic parameters, then run the state-update function in a JAX loop.
+5. **Analyze or optimize.** Use JAX transformations such as JIT compilation, vectorization, and automatic differentiation to measure observables, fit parameters, minimize structures, or optimize potentials. Start with a small test and inspect energy/drift before scaling.
+6. **Explore extensions.** Follow the neural-network potential example for learned energies, and the notebooks for swap Monte Carlo, meta-optimization, implicit differentiation, and elasticity.
+
+### Functionality map
+
+- Space and boundary-condition definitions; pair potentials and energy functions; particle initialization and state utilities.
+- Neighbor lists and partitioning for scalable interactions; NVE/NVT/NPT simulation and energy minimization.
+- JAX-native compilation, batching, and differentiation for parameter fitting and end-to-end design.
+- Browse [FEATURES.md](https://github.com/jax-md/jax-md/blob/main/FEATURES.md), [examples](examples/), [tests](tests/), and the [API documentation](https://jax-md.readthedocs.io/en/main/) for the full library surface.
+
